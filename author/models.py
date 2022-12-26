@@ -68,6 +68,26 @@ class Author(models.Model):
         blank=True,
         null=True
     )
+    tag_permission = models.BooleanField(
+        verbose_name=_('Permissão para Tag'),
+        blank=False,
+        null=False,
+        default=False,
+        choices=(
+            (True, _('Sim')),
+            (False, _('Não')),
+        )
+    )
+    post_permission = models.BooleanField(
+        verbose_name=_('Permissão para Post'),
+        blank=False,
+        null=False,
+        default=False,
+        choices=(
+            (True, _('Sim')),
+            (False, _('Não')),
+        )
+    )
 
     def __str__(self) -> str:
         return self.user.get_full_name()
