@@ -2,6 +2,7 @@ import uuid
 
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class User(AbstractUser):
@@ -30,6 +31,9 @@ class User(AbstractUser):
         default='User.png'
     )
 
+    def __str__(self) -> str:
+        return self.get_full_name()
+
     class Meta:
-        verbose_name = 'Usuário'
-        verbose_name_plural = 'Usuários'
+        verbose_name = _('Usuário')
+        verbose_name_plural = _('Usuários')
