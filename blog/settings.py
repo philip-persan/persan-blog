@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'corsheaders',
     # * My Apps
+    'users',
 ]
 
 PASSWORD_HASHERS = [
@@ -138,6 +139,8 @@ STATIC_ROOT = 'static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+AUTH_USER_MODEL = "users.User"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
