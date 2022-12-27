@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django_filters',
     'debug_toolbar',
     'corsheaders',
+    'ckeditor',
     # * My Apps
     'users',
     'author',

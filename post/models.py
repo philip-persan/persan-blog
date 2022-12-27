@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -24,7 +25,7 @@ class Post(models.Model):
         blank=False,
         verbose_name=_("Tag")
     )
-    body = models.TextField(
+    body = RichTextField(
         verbose_name=_("Body"),
         blank=False,
         null=True
@@ -32,6 +33,12 @@ class Post(models.Model):
     date_created = models.DateField(
         verbose_name=_("Date Created"),
         auto_now_add=True
+    )
+    is_published = models.BooleanField(
+        verbose_name=_("Is Published"),
+        blank=False,
+        null=False,
+        default=False
     )
 
     def __str__(self) -> str:
